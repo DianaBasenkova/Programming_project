@@ -9,6 +9,9 @@ public class Radio {
         this.totalStations = totalStations;
     }
 
+    //конструктор без параметра
+    public Radio() {
+    }
 
     public int getTotalStation() {
         return totalStations;
