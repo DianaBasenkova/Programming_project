@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     //Инициализируем с условием если всего станций 10, максимальный номер станции  = 9
-    Radio radio = new Radio(10);
+    Radio radio = new Radio();
 
     @Test
     // установить станцию выше лимита
@@ -15,6 +15,7 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     //установить станцию ниже лимита
     public void settingStationBelowMin() {
@@ -84,7 +85,7 @@ public class RadioTest {
     }
 
     @Test
-     //уменьшение звука
+    //уменьшение звука
     public void sholdDecreaseVolume() {
 
         radio.setCurrentVolume(100);
@@ -122,16 +123,25 @@ public class RadioTest {
     @Test
     //установка количества станций
     public void setRadioTotalNumberOfStations() {
-        Radio radio = new Radio(15);
-        Assertions.assertEquals(15, radio.getTotalStation());
-
+        Radio radio = new Radio(25);
+        Assertions.assertEquals(25, radio.getTotalStation());
     }
+
     @Test
     //проверка максимального номера станции, если всего их 25
-    public void checkingMaxNumber(){
-        Radio radio = new Radio(25);
-        int expected = 24;
+    public void checkingMaxNumber() {
+        Radio radio = new Radio(20);
+        int expected = 19;
         int actual = radio.getMaxNumberOfStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void newSettingStations() {
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(15);
+        int expected = 15;
+        int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 }

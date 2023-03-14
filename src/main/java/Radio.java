@@ -1,12 +1,14 @@
 public class Radio {
     private int currentVolume;
-    private int totalStations = 10;
     private int maxNumberOfStation = 9;
     private int minNumberOfStation = 0;
-    private int currentStation = minNumberOfStation;
+    private int totalStations = maxNumberOfStation + 1;
+    private int currentStation;
 
     public Radio(int totalStations) {
         this.totalStations = totalStations;
+        this.maxNumberOfStation = totalStations - 1;
+        this.currentStation = getCurrentStation();
     }
 
     //конструктор без параметра
