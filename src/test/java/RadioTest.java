@@ -128,7 +128,7 @@ public class RadioTest {
     }
 
     @Test
-    //проверка максимального номера станции, если всего их 25
+    //проверка максимального номера станции, если всего их 20
     public void checkingMaxNumber() {
         Radio radio = new Radio(20);
         int expected = 19;
@@ -137,6 +137,7 @@ public class RadioTest {
     }
 
     @Test
+    //установка номера станции №15
     public void newSettingStations() {
         Radio radio = new Radio(20);
         radio.setCurrentStation(15);
